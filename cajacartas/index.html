@@ -6,9 +6,19 @@
 <title>Sarang</title>
 
 <link rel="stylesheet" href="./cajacartas.css">
+    
+<link rel="stylesheet" href="../bot/bot.css">
 </head>
 <body>
 
+
+
+
+
+
+
+
+    
 <!-- Header -->
 <header class="header">
     <div class="container header-content">
@@ -19,6 +29,56 @@
     </div>
 </header>
 
+
+<!-- BOT FLOTANTE -->
+<div class="chatbot" id="chatbot">
+
+
+
+
+
+  <div class="chatbot-header">
+    <div class="bot-avatar">
+      <img src="../bot/avatar.png" alt="Gatito">
+    </div>
+    <span>Recuerdos 💜</span>
+    <button onclick="minimizarBot()">—</button>
+  </div>
+
+  <div class="chatbot-body" id="chatBody">
+    <div class="bot-msg">
+      💜 Hola… ¿qué quieres recordar hoy?
+    </div>
+  </div>
+  
+
+  <!-- OPCIONES FIJAS -->
+ <div class="bot-options" id="botOptions">
+    <button onclick="responder('color')">🎨 Color favorito</button>
+    <button onclick="responder('cumple')">🎂 Cumpleaños</button>
+    <button onclick="responder('nombre')">💜 Su nombre</button>
+    <button onclick="responder('canciones')">🎶 Canciones</button>
+    <button onclick="responder('gatito')">🐱 Gatito</button>
+    <button onclick="responder('conocieron')">📍 Dónde se conocieron</button>
+    <button onclick="responder('fecha')">📅 Fecha especial</button>
+    <button onclick="responder('mesiversario')">💞 Mesiversario</button>
+    <button onclick="responder('bts')">🎶 BTS</button>
+    <button onclick="responder('regalo')">🎁 Regalo perfecto</button>
+    <button onclick="responder('tradicion')">💋 Tradición</button>
+    <button onclick="responder('besos')">😘 Tipos de besos</button>
+  </div>
+<div class="bot-options hidden" id="moreOptions">
+  <button onclick="mostrarOpciones()">💜 ¿Quieres saber algo más?</button>
+</div>
+
+</div>
+
+<div class="chatbot-min" id="chatbotMin" onclick="abrirBot()">
+  <img src="../bot/avatar.png" alt="Gatito">
+</div>
+
+
+    
 <!-- Hero -->
 <section class="hero">
     <div class="container hero-content">
@@ -61,10 +121,12 @@
 </footer>
 
 <script src="./cajacartas.js"></script>
+    <script src="../bot/bot.js"></script>
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 </script>
 
 </body>
 </html>
+
 
