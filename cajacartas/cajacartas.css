@@ -1,0 +1,372 @@
+:root {
+--color-fondo: #f5f7fa;
+--color-texto: #1a1a1a;
+--color-primario: #ee96f6;
+--color-secundario: #e87aba;
+--color-card: #ffffff;
+--color-muted: #6b7280;
+--radius: 12px;
+--shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+
+/* ========== RESET ========== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+/* ========== CONTAINER ========== */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* ========== HEADER ========== */
+.header {
+    background: var(--color-secundario);
+    color: #fff;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.2rem;
+}
+
+.nav a {
+    margin-left: 15px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav a:hover {
+    color: #fff;
+}
+
+
+/* ========== HERO ========== */
+.hero {
+    position: relative;        /* para poder colocar contenido encima */
+     flex: 1;            /* ocupa toda la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgba(243, 91, 225, 0.964);
+    background: var(--color-primario);
+    padding: 0;
+    
+    /* Imagen de fondo */
+    background-image: url('../CajaCartas/carta2.jpg');  /* reemplaza con tu imagen */
+    background-size: cover;               /* cubre todo el hero */
+    background-position: center;          /* centra la imagen */
+    background-repeat: no-repeat;         /* no repetir */
+}
+
+/* media query al final del CSS */
+@media (max-width: 768px) {
+    .hero {
+        background-image: url('../CajaCartas/carta2.jpg');
+    }
+}
+.hero h2 {
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+     font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+/* ========== BOTÓN ========== */
+.btn {
+    background: #b55656;
+    color: var(--color-primario);
+    padding: 12px 26px;
+    border-radius: 999px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+    width: 100%;
+    background: var(--color-secundario);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+
+
+
+/* ========== BAÚL CSS ========== */
+
+
+/* BAÚL */
+.vault {
+    width: 240px;
+    height: 170px;
+    position: relative;
+    cursor: pointer;
+    perspective: 1600px;
+    transform-style: preserve-3d;
+}
+
+.vault-lid::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    width: 46px;
+    height: 10px;
+    background: linear-gradient(#ffd27d, #c99a2b);
+    border-radius: 6px;
+    box-shadow: inset 0 0 4px rgba(0,0,0,0.4);
+}.vault-lid {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 52%;
+    background: linear-gradient(180deg, #c98a3a, #8b5a2b);
+    border-radius: 18px 18px 10px 10px;
+
+    /* CLAVE */
+    transform-origin: center bottom;
+    transform-style: preserve-3d;
+
+    transition: transform 0.9s cubic-bezier(.25,.8,.25,1);
+    box-shadow:
+        inset 0 -6px 0 rgba(0,0,0,0.25),
+        0 14px 24px rgba(0,0,0,0.3);
+
+    z-index: 4;
+    backface-visibility: hidden;
+}
+
+.vault-body {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 60%;
+    background: linear-gradient(180deg, #9b5d2e, #5b2f14);
+    border-radius: 10px 10px 18px 18px;
+    box-shadow:
+        inset 0 10px 0 rgba(255,255,255,0.08),
+        inset 0 -6px 0 rgba(0,0,0,0.35),
+        0 14px 30px rgba(0,0,0,0.35);
+    z-index: 1;
+}
+
+.vault-body::after {
+    content: "";
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 28px;
+    height: 28px;
+    background: radial-gradient(circle, #ffd966, #c9972c);
+    border-radius: 50%;
+    box-shadow:
+        inset 0 0 6px rgba(0,0,0,0.4),
+        0 4px 6px rgba(0,0,0,0.3);
+}
+
+
+/* ABRIR */
+.vault.open .vault-lid {
+    transform:
+        translateY(-55px)     /* ⬆ sube */
+        rotateX(-70deg)      /* 🔄 abre */
+        translateZ(30px);     /* profundidad */
+}
+
+/* CARTAS */
+.cards {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 900px;
+    animation: appear 0.6s ease forwards;
+}
+
+.cards.hidden {
+    display: none;
+}
+
+
+.card {
+    background: var(--color-card);
+    padding: 16px 22px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* POPUP */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+.overlay.hidden {
+    display: none;
+}
+
+.popup {
+    width: 90%;
+    max-width: 500px;
+    height: 80%;
+    background: #fff;
+    border-radius: var(--radius);
+    position: relative;
+}
+
+.popup iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: var(--radius);
+}
+
+.close {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+/* ========== MODO ICONOS (MÓVIL) ========== */
+@media (max-width: 600px) {
+
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(70px, 1fr));
+        gap: 14px;
+        max-width: 320px;
+    }
+
+    .card {
+        padding: 14px;
+        font-size: 1.8rem;       /* agranda el emoji */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        aspect-ratio: 1 / 1;     /* cartas cuadradas */
+    }
+
+    /* Ocultar texto y dejar solo emoji */
+    .card span {
+        display: none;
+    }
+}
+
+
+/* ========== EFECTOS MÁGICOS ========== */
+
+/* CONTENEDOR DE PARTÍCULAS */
+.magic-particles {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: visible;
+    z-index: 5;
+}
+
+/* PARTÍCULA */
+.particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, #ffd700, #ff9f00);
+    border-radius: 50%;
+    opacity: 0;
+    animation: particle-float 1.2s ease-out forwards;
+}
+
+/* ANIMACIÓN PARTÍCULAS */
+@keyframes particle-float {
+    0% {
+        transform: translate(0, 0) scale(0.6);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--x), var(--y)) scale(0);
+        opacity: 0;
+    }
+}
+
+/* BRILLO INTERNO */
+.vault-glow {
+    position: absolute;
+    inset: 6px;
+    border-radius: 18px;
+    background: radial-gradient(circle at center,
+        rgba(255,215,120,0.9),
+        rgba(255,170,60,0.3),
+        transparent 70%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* ACTIVACIÓN AL ABRIR */
+.vault.open .vault-glow {
+    opacity: 1;
+    animation: glowPulse 1.2s ease-out;
+}
+
+@keyframes glowPulse {
+    0% { transform: scale(0.85); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}

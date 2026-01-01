@@ -1,0 +1,81 @@
+<!-- Archivo: index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Plantilla Web - Default</title>
+
+<link rel="stylesheet" href="./styles.css">
+<link rel="stylesheet" href="css/calendar.css">
+<link rel="stylesheet" href="./Modalgato/gato.css">
+
+</head>
+
+<script>
+    window.location.replace("./cajacartas/index.html");
+</script>
+
+<body>
+
+<!-- Header -->
+<header class="header">
+    <div class="container header-content">
+        <h1 class="logo">Sarang</h1>
+        <nav class="nav">
+            <a href="index.html">Inicio</a>
+            <a href="calendar/calendar.html">Calendar</a>
+
+            <a href="#fotos">Fotos</a>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero principal -->
+<section class="hero">
+    <div class="container hero-content">
+        <h2>Bienvenida a Sari</h2>
+
+      <button id="btnComenzar" class="btn">Comenzar</button>
+
+<div id="popupGato" class="oculto popup-contenedor">
+    <iframe src="./Modalgato/gato.html" class="popup-frame"></iframe>
+</div>
+
+<script src="./Modalgato/gato.js"></script>
+
+
+
+    </div>
+</section>
+
+<!-- Sección de contenido -->
+<section class="sections container">
+    <div class="card">
+        <h3>Título 1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </div>
+    <div class="card">
+        <h3>Título 2</h3>
+        <p>Integer facilisis sapien eu sapien consequat, a placerat arcu.</p>
+    </div>
+    <div class="card">
+        <h3>Título 3</h3>
+        <p>Ut fringilla mauris vel libero gravida, id viverra justo consequat.</p>
+    </div>
+  
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; <span id="year"></span> Mi Página - Todos los derechos reservados</p>
+</footer>
+
+<script src="popup.js"></script>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

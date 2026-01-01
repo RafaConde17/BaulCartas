@@ -1,0 +1,470 @@
+/* Contenedor del popup */
+
+.popup-contenedor {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background: rgba(0,0,0,0.6);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 999;
+
+}
+
+
+
+.oculto {
+
+    display: none;
+
+}
+
+/* MENSAJE */
+
+.mensaje {
+
+    text-align: center;
+
+    margin-top: 20px;
+
+    font-size: 18px;
+
+    color: white;
+
+}
+
+
+
+
+
+/* --- CARA PRINCIPAL --- */
+
+.cat-face {
+
+    position: relative;
+
+    width: 250px;
+
+    height: 180px;
+
+    background-color: #fce4ec; /* Rosa claro para la cara */
+
+    border-radius: 50%; /* Hace que sea un círculo */
+
+    border: 5px solid #fce4ec; /* Borde marrón oscuro */
+
+    box-sizing: border-box;
+    margin-top: 9%;
+    /* Centra los elementos internos */
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+
+/* --- OREJAS --- */
+
+.ear {
+
+    position: absolute;
+
+    width: 110px;
+
+    height: 80px;
+
+    background-color: #fce4ec;
+
+    top: -50px; /* Sube la oreja por encima de la cara */
+
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%); /* Forma de triángulo */
+
+    border: 5px solid #fce4ec;
+
+    box-sizing: border-box;
+
+}
+
+
+
+.ear-left {
+
+    left: 0px;
+
+    transform: rotate(-20deg);
+
+}
+
+
+
+.ear-right {
+
+    right: 0px;
+
+    transform: rotate(20deg);
+
+}
+
+
+
+.inner-ear {
+
+    position: absolute;
+
+    width: 40px;
+
+    height: 40px;
+
+    background-color: #f8bbd0; /* Rosa para el interior */
+
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+
+    top: 25px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+}
+
+
+
+/* --- RASGOS FACIALES (CONTENEDOR) --- */
+
+.features {
+
+    position: relative;
+
+    top: -10px; /* Ajusta la posición vertical de los rasgos */
+
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+
+/* --- OJOS --- */
+.eyeb {
+
+    position: absolute;
+
+    width: 70px;
+
+    height: 52px;
+
+    background-color: #0a0a09; /* Negro para los ojos */
+
+    border-radius: 50%;
+
+    top: 55px;
+
+}
+
+.eyeb-left {
+
+    left: 35px;
+
+}
+
+
+
+.eyeb-right {
+
+    right: 35px;
+
+}
+
+
+
+
+
+
+
+.eye {
+
+    position: absolute;
+
+    width: 65px;
+
+    height: 48px;
+
+    background-color: #8bd5fdd7; /* Negro para los ojos */
+
+    border-radius: 50%;
+
+    top: 60px;
+
+}
+.eye2 {
+
+    position: absolute;
+
+    width: 10px;
+
+    height: 40px;
+
+    background-color: #171514; /* Negro para los ojos */
+
+    border-radius: 60%;
+
+    top: 65px;
+
+}
+
+.eye2-left {
+
+    left: 70px;
+
+}
+
+
+
+.eye2-right {
+
+    right: 70px;
+
+}
+
+
+.eye-left {
+
+    left: 40px;
+
+}
+
+
+
+.eye-right {
+
+    right: 40px;
+
+}
+
+
+/* --- NARIZ Y BOCA (Muzzle) --- */
+
+.muzzle {
+
+    position: absolute;
+    top: 110px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+
+
+.nose {
+
+    width: 35px;
+
+    height: 30px;
+
+    background-color: #d261d0; /* Rosa para la nariz */
+
+    border-radius: 30% 30% 50% 50%; /* Solo bordes inferiores redondeados */
+    
+
+}
+
+
+
+.mouth-line {
+
+    width: 25px;
+
+    height: 50%;
+
+    border-top: 3px solid #3e2723;
+
+    border-radius: 0 0 100% 100%;
+
+    margin-top: 15px;
+
+}
+
+
+
+.popup-frame {
+    /* Aseguramos que el marco sea lo suficientemente grande (por ejemplo, 320px) */
+    width: 350px; 
+    height: 350px; 
+    border: none; /* Opcional: para quitar el borde del iframe */
+}
+
+
+/* --- BIGOTES --- */
+
+.whisker {
+
+    position: absolute;
+
+    width: 50px;
+
+    height: 2px;
+
+    background-color: #3e2723;
+
+    top: 120px;
+
+}
+
+
+
+.whisker-left-top {
+
+    left: 40px;
+
+    transform: rotate(10deg);
+
+}
+
+
+
+.whisker-left-bottom {
+
+    left: 40px;
+
+    top: 130px;
+
+    transform: rotate(-10deg);
+
+}
+
+
+
+.whisker-right-top {
+
+    right: 40px;
+
+    transform: rotate(-10deg);
+
+}
+
+
+
+.whisker-right-bottom {
+
+    right: 40px;
+
+    top: 130px;
+
+    transform: rotate(10deg);
+
+}
+
+.marca {
+
+    position: absolute;
+    width: 40px;
+
+    height: 2px;
+    border-radius: 50px;
+
+    background-color: #3e2723;
+
+    top: 120px;
+   
+
+}
+
+.marca-left {
+    right: 85px;
+    transform: rotate(20deg);
+        
+     top: 145px;
+}
+.marca-right {
+    left: 85px;
+    transform: rotate(-20deg);
+    top: 145px;
+}
+.marca2 {
+
+    position: absolute;
+    width: 20px;
+
+    height: 2px;
+    border-radius: 50px;
+
+    background-color: #3e2723;
+
+    top: 130px;
+   
+
+}
+
+.marca2-left {
+    right: 68px;
+    transform: rotate(-20deg);
+        
+     top: 148px;
+}
+.marca2-right {
+    left: 68px;
+    transform: rotate(20deg);
+    top: 148px;
+}
+
+
+/* --- ANIMACIÓN DE PARPADEO --- */
+
+@keyframes blink {
+  0%, 92%, 100% {
+        transform: scaleY(0); /* ojo abierto */
+    }
+  94%, 97% {
+        transform: scaleY(1); /* ojo cerrado */
+    }
+}
+
+
+.parpado {
+    position: absolute;
+    width: 70px;
+    height: 52px;
+    background-color: #fce4ec; /* color cara del gato */
+    border-radius: 50%;
+    top: 61px;
+
+    transform-origin: top;
+    animation: blink 3s infinite ease-in-out;
+    z-index: 10;
+}
+
+/* Ajustar cada párpado a su ojo */
+.parpado-left {
+    left: 35px;
+}
+
+.parpado-right {
+    right: 35px;
+}

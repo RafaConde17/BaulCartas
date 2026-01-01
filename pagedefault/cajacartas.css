@@ -1,0 +1,119 @@
+:root {
+--color-fondo: #f5f7fa;
+--color-texto: #1a1a1a;
+--color-primario: #ee96f6;
+--color-secundario: #e87aba;
+--color-card: #ffffff;
+--color-muted: #6b7280;
+--radius: 12px;
+--shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+
+/* ========== RESET ========== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--color-fondo);
+    color: var(--color-texto);
+}
+
+/* ========== CONTAINER ========== */
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* ========== HEADER ========== */
+.header {
+    background: var(--color-secundario);
+    color: #fff;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.2rem;
+}
+
+.nav a {
+    margin-left: 15px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.nav a:hover {
+    color: #fff;
+}
+
+
+/* ========== HERO ========== */
+.hero {
+    position: relative;        /* para poder colocar contenido encima */
+     flex: 1;            /* ocupa toda la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: rgba(247, 249, 246, 0.964);
+    background: var(--color-primario);
+    padding: 0;
+    
+    /* Imagen de fondo */
+    background-image: url('carta.jpg');  /* reemplaza con tu imagen */
+    background-size: cover;               /* cubre todo el hero */
+    background-position: center;          /* centra la imagen */
+    background-repeat: no-repeat;         /* no repetir */
+}
+
+/* media query al final del CSS */
+@media (max-width: 768px) {
+    .hero {
+        background-image: url('carta2.png');
+    }
+}
+.hero h2 {
+    font-size: 2.3rem;
+    margin-bottom: 10px;
+     font-family: 'Georgia', 'Times New Roman', serif;
+}
+
+/* ========== BOTÓN ========== */
+.btn {
+    background: #fff;
+    color: var(--color-primario);
+    padding: 12px 26px;
+    border-radius: 999px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+    width: 100%;
+    background: var(--color-secundario);
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+

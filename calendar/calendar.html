@@ -1,0 +1,74 @@
+<!-- Archivo: calendar.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario - Sarang</title>
+
+    <!-- CSS global -->
+    <link rel="stylesheet" href="./styles.css">
+
+    <!-- CSS del calendario -->
+    <link rel="stylesheet" href="calendar.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+    <div class="container header-content">
+        <h1 class="logo">Sarang</h1>
+        <nav class="nav">
+            <a href="../index.html">Inicio</a>
+        <a href="calendar.html" class="active">Calendar</a>
+            <a href="#fotos">Fotos</a>
+        </nav>
+    </div>
+</header>
+
+<!-- Calendario -->
+<section class="calendar-section container">
+
+    <h2 class="calendar-title">Calendario de Actividades</h2>
+
+    <!-- Navegación -->
+    <div class="calendar-header">
+        <button id="prevMonth" class="btn-cal small">←</button>
+        <h3 id="currentMonth"></h3>
+        <button id="nextMonth" class="btn-cal small">→</button>
+    </div>
+
+    <!-- Grid del calendario -->
+    <div id="calendarGrid" class="calendar-grid"></div>
+
+    <!-- Panel lateral -->
+    <div class="activity-panel">
+        <h3>Actividades del día</h3>
+        <p id="selectedDateText">Selecciona un día</p>
+
+        <ul id="activityList" class="activity-list"></ul>
+
+        <button id="btnAgregar" class="btn">Agregar actividad</button>
+    </div>
+
+</section>
+
+<!-- Modal -->
+<div id="modalAct" class="modal-act" style="display: none;">
+    <div class="modal-content-act">
+        <h2>Agregar actividad</h2>
+      
+        <input type="text" id="actividadInput" placeholder="Descripción de la actividad">
+   <br>  <br>
+        <div class="btn-row">
+            <button id="guardarActividad" class="btn">Guardar</button>
+            <button id="cancelarActividad" class="btn-secondary">Cancelar</button>
+        </div>
+    </div>
+</div>
+
+<!-- JS -->
+<script src="calendar.js"></script>
+
+</body>
+</html>

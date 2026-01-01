@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sarang</title>
+
+<link rel="stylesheet" href="../CajaCartas/cajacartas.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="header">
+    <div class="container header-content">
+        <h1 class="logo">Sarang</h1>
+        <nav class="nav">
+            <a href="../CajaCartas/index.html">Inicio</a>
+        </nav>
+    </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="container hero-content">
+
+        <!-- BAÚL -->
+      <div class="vault" id="vault">
+    <div class="vault-lid"></div>
+    <div class="vault-body"></div>
+
+    <div class="vault-glow"></div>
+    <div class="magic-particles" id="particles"></div>
+</div>
+
+        <!-- CARTAS -->
+        <div class="cards hidden" id="cards">
+            <div class="card" data-carta="../CartaNavideña/index.html">🎄<span> Carta de Navidad</span></div>
+            <div class="card" data-carta="../CartaYear2026/index.html">🎆<span> Año Nuevo</span></div>
+           
+            </div>
+
+        <!-- POPUP -->
+        <div class="overlay hidden" id="overlay">
+            <div class="popup">
+                <button class="close" id="cerrarPopup">✖</button>
+                <iframe id="iframeCarta"></iframe>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; <span id="year"></span> Recuerdos creados</p>
+</footer>
+
+<script src="cajacartas.js"></script>
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!-- Archivo: index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feliz Navidad</title>
+
+<link rel="stylesheet" href="carta.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- NIEVE -->
+<div id="snow" class="snow"></div>
+
+<!-- Header -->
+<header class="header">
+    <div class="container header-content">
+        <h1 class="logo">Sarang</h1>
+        <nav class="nav">
+            <a href="index.html">Inicio</a>
+ 
+        </nav>
+    </div>
+</header>
+
+<!-- Hero principal -->
+<section class="hero">
+    <div class="container hero-content">
+        <h2>Feliz Navidad</h2>
+
+
+
+
+      <button id="btnComenzar" class="btn">Comenzar</button>
+
+
+    </div>
+</section>
+
+<!-- POPUP -->
+ <div id="overlay" class="overlay">
+
+    <div id="cartaCerrada" class="carta-cerrada">
+    ✉️
+    <span>Haz clic para abrir</span>
+</div>
+
+
+<div id="popup" class="popup blink carta-animada">
+    <div class="popup-content">
+        <span id="cerrarPopup" class="close reno">🦌</span>
+        <h3>💖🎄Para ti, mi amor🎄 💖</h3>
+        <p>
+            
+        
+            <br><br>
+🦌✨ Este mensaje es pequeño, pero está lleno de cariño ✨🦌  
+<br><br>
+
+🎄 Esta Navidad quiero recordarte que cada día a tu lado es un regalo 🎁  
+<br><br>
+
+🎮💞 Entre risas y momentos jugando juntos,  
+fui guardando recuerdos que hoy valoro más que nunca ✨  
+<br><br>
+
+🤍 Gracias por cada instante, por tu compañía  
+y por hacer que incluso los días más simples se vuelvan especiales ❄️  
+<br><br>
+
+🎅❤️ Que esta Navidad esté llena de amor, paz y sueños cumplidos…  
+y que sigamos creando muchos momentos hermosos juntos 🦌✨  
+<br><br>
+
+💖 Con todo mi cariño 💖  
+<br>
+✨Feliz Navidad, Mi Amor✨
+</p>
+
+       
+    </div>
+</div>
+
+</div>
+<!-- MUSICA -->
+<audio id="musica" src="carta.mp3" loop></audio>
+
+
+
+
+
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; <span id="year"></span> Nuestra Primera Navidad 💖 </p>
+</footer>
+
+<script src="carta.js"></script>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
