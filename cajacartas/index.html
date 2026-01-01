@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sarang</title>
 
-<link rel="stylesheet" href="../CajaCartas/cajacartas.css">
+<link rel="stylesheet" href="./cajacartas.css">
 </head>
 <body>
 
@@ -14,7 +14,7 @@
     <div class="container header-content">
         <h1 class="logo">Sarang</h1>
         <nav class="nav">
-            <a href="../CajaCartas/index.html">Inicio</a>
+            <a href="index.html">Inicio</a>
         </nav>
     </div>
 </header>
@@ -24,6 +24,7 @@
     <div class="container hero-content">
 
         <!-- BAÚL -->
+         <div class="vault-wrapper">
       <div class="vault" id="vault">
     <div class="vault-lid"></div>
     <div class="vault-body"></div>
@@ -32,11 +33,12 @@
     <div class="magic-particles" id="particles"></div>
 </div>
 
+</div>
         <!-- CARTAS -->
         <div class="cards hidden" id="cards">
-            <div class="card" data-carta="../CartaNavideña/index.html">🎄<span> Carta de Navidad</span></div>
-            <div class="card" data-carta="../CartaYear2026/index.html">🎆<span> Año Nuevo</span></div>
-           
+            <div class="card" data-carta="/cartacavideña/index.html">🎄<span> Carta de Navidad</span></div>
+            <div class="card" data-carta="/cartayear2026/index.html">🎆<span> Año Nuevo</span></div>
+     
             </div>
 
         <!-- POPUP -->
@@ -58,7 +60,7 @@
     <p>&copy; <span id="year"></span> Recuerdos creados</p>
 </footer>
 
-<script src="cajacartas.js"></script>
+<script src="./cajacartas.js"></script>
 <script>
 document.getElementById('year').textContent = new Date().getFullYear();
 </script>
